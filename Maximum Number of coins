@@ -9,3 +9,19 @@ class Solution:
             ans += piles[0]
             piles.pop(0)
         return ans
+   
+( Optimised )
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        
+        piles.sort(reverse=True)
+        ans = 0
+        i = 0
+        j = len(piles)-1
+        while i+1 < j:
+            i += 1
+            j -= 1
+            ans += piles[i]
+            i += 1
+            
+        return ans
